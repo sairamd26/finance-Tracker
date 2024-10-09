@@ -1,5 +1,5 @@
 import express, {request,response} from "express";
-import financeRecordModel from "../Schema/FinanceRecord.js";
+import financeRecordModel from '../Schema/financeRecord.js';
 
 const router = express.Router();
 
