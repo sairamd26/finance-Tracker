@@ -18,12 +18,23 @@ const mongoURI = `mongodb+srv://dsairam26:${Mongo_Pswrd}@cluster0.lt1is.mongodb.
 
 mongoose
 .connect(mongoURI)
-.then(()=> console.log("Succesfully Connectd to MongoDb!!!"))
+.then(() => {
+  console.log("Successfully Connected to MongoDb!!!");
+  // Start the server after successful connection
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+})
 .catch((err) => console.log("Unable to connect!!!  to MongoDb",err))
 
 
 app.use("/finance-records",financialRecordRouter);
 
-app.listen(PORT, () => {
+/*app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
+});*/
+
+// Basic route for testing
+app.get("/", (req, res) => {
+  res.send("Welcome to the API!");
 });
