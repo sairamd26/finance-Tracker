@@ -11,7 +11,7 @@ export const FinancialRecordsProvider = ({ children }) => {
   const fetchRecords = async () => {
     if (!user) return;
     const response = await fetch(
-      `http://localhost:3001/finance-records/getAllByUserID/${user.id}`
+      `https://finance-tracker-server-beta.vercel.app/?vercelToolbarCode=CaunXYvfd5m03t7/finance-records/getAllByUserID/${user.id}`
     );
 
     if (response.ok) {
@@ -26,7 +26,7 @@ export const FinancialRecordsProvider = ({ children }) => {
   }, [user]);
 
   const addRecord = async (record) => {
-    const response = await fetch("http://localhost:3001/finance-records", {
+    const response = await fetch("https://finance-tracker-server-beta.vercel.app/?vercelToolbarCode=CaunXYvfd5m03t7/finance-records", {
       method: "POST",
       body: JSON.stringify(record),
       headers: {
@@ -46,7 +46,7 @@ export const FinancialRecordsProvider = ({ children }) => {
 
   const updateRecord = async (id, newRecord) => {
     const response = await fetch(
-      `http://localhost:3001/finance-records/${id}`,
+      `https://finance-tracker-server-beta.vercel.app/?vercelToolbarCode=CaunXYvfd5m03t7/finance-records/${id}`,
       {
         method: "PUT",
         body: JSON.stringify(newRecord),
@@ -70,7 +70,7 @@ export const FinancialRecordsProvider = ({ children }) => {
 
   const deleteRecord = async (id) => {
     const response = await fetch(
-      `http://localhost:3001/finance-records/${id}`,
+      `https://finance-tracker-server-beta.vercel.app/?vercelToolbarCode=CaunXYvfd5m03t7/finance-records/${id}`,
       {
         method: "DELETE",
       }
