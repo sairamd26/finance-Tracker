@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(cors());
 
 const mongoURI = `mongodb+srv://dsairam26:${Mongo_Pswrd}@cluster0.lt1is.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+console.log(Mongo_Pswrd);
 
 mongoose
 .connect(mongoURI)
